@@ -15,11 +15,11 @@ Git::Demo - A way for scripting git demonstrations
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -112,16 +112,13 @@ sub dir{
 
 =head1 AUTHOR
 
-Robin Clarke, C<< <rcl at cpan.org> >>
+Robin Clarke, C<< <perl at robinclarke.net> >>
 
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-git-demo at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Git-Demo>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
-
 
 =head1 SUPPORT
 
@@ -133,6 +130,10 @@ You can find documentation for this module with the perldoc command.
 You can also look for information at:
 
 =over 4
+
+=item * Repository on Github
+
+L<https://github.com/robin13/Git-Demo>
 
 =item * RT: CPAN's request tracker
 
@@ -155,6 +156,7 @@ L<http://search.cpan.org/dist/Git-Demo/>
 
 =head1 ACKNOWLEDGEMENTS
 
+L<http://git-scm.com/>
 
 =head1 LICENSE AND COPYRIGHT
 

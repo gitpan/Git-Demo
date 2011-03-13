@@ -91,9 +91,12 @@ sub exec{
     my @characters = $self->characters( $event );
     foreach my $character( @characters ){
         $logger->debug( sprintf( "running a %s action for %s", $event->type(), $character->name() ) );
-        my $rtn = $self->{action_handlers}->{ $event->type() }->run( $character, $event );
-        if( $self->{verbose} ){
+        my( $rtn, $warnings ) = $self->{action_handlers}->{ $event->type() }->run( $character, $event );
+        if( $self->{verbose} && $rtn ){
             print $rtn;
+        }
+        if( $warnings ){
+            print "Git warnings:\n$warnings";
         }
     }
 }

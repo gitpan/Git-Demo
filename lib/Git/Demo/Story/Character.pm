@@ -30,6 +30,8 @@ sub new{
         env => {
             GIT_COMMITTER_EMAIL => $args->{name} . '@zipmail.com',
             GIT_COMMITTER_NAME  => $args->{name},
+            GIT_AUTHOR_EMAIL    => $args->{name} . '@zipmail.com',
+            GIT_AUTHOR_NAME     => $args->{name},
         },
     };
 
@@ -44,12 +46,16 @@ sub new{
     ##FIXME
     # There should be options to use existing, or even remote (ssh?) repositories
     # For now default is always initialise
+    ##FIXME
+    # This should be moved to the Actions/Git section
     $logger->debug( "Initialising repository character: $args->{name}" );
+
     my @git_args = ( 'init' );
     if( $args->{git_args} ){
         push( @git_args, @{ $args->{git_args} } );
     }
-    push( @git_args, $self->{dir}, $options );
+    push( @git_args, $self->{dir} );
+    push( @git_args, $options );
     $self->{git} = Git::Repository->create( @git_args );
 
     bless $self, $class;

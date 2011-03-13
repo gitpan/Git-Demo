@@ -18,7 +18,7 @@ sub run{
     my( $self, $character, $event ) = @_;
     my @args = @{ $event->args() };
     foreach( @args ){
-        printf( ">> %s says: %s\n", $character->name(), $_ );
+        printf( ">> %-12s : %s\n", $character->name() . ' says', $_ );
     }
 }
 
